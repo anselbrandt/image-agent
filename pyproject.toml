@@ -9,6 +9,7 @@ dependencies = [
     "devtools>=0.12.2",
     "httpx>=0.28.1",
     "logfire[asyncpg,httpx]>=3.19.0",
+    "pillow>=11.2.1",
     "pydantic-ai[logfire]>=0.2.18",
     "python-dotenv>=1.1.0",
 ]

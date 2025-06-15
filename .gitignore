@@ -12,5 +12,8 @@ wheels/
 # Logfire
 .logfire/
 
+# Output
+outputs/
+
 # Secrets
 .env
