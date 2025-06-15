@@ -21,10 +21,10 @@ def decode_and_save_base64(image_b64: str, file_path: str):
     print(f"✅ Image saved to {file_path}")
 
 
-async def generate_image_from_prompt(prompt: str) -> str:
+async def generate_image_from_prompt(prompt: str, negative_prompt: str) -> str:
     payload = {
         "prompt": prompt,
-        "negative_prompt": "older girl, centered pose, hands on hips, modern fire truck only, extra limbs, cartoonish style, low resolution, fantasy elements, futuristic elements, text overlay, watermark",
+        "negative_prompt": negative_prompt,
         "steps": 30,
         "cfg_scale": 7,
         "width": 1600,
@@ -67,9 +67,10 @@ async def main():
         "Yellow fire hoses are stretched across a residential street."
         "The scene is framed like an early 2000s candid photo, with a shallow depth of field that keeps the girl in sharp focus while the fire and firefighters are slightly blurred."
     )
+    negative_prompt = "older girl, centered pose, hands on hips, modern fire truck only, extra limbs, cartoonish style, low resolution, fantasy elements, futuristic elements, text overlay, watermark"
     print(f"📝 Generated prompt:\n{prompt}\n")
 
-    image_path = await generate_image_from_prompt(prompt)
+    image_path = await generate_image_from_prompt(prompt, negative_prompt)
     if image_path:
         print(f"✅ Image generated at {image_path}")
     else:
