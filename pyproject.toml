@@ -1,0 +1,21 @@
+[project]
+name = "image-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.8"
+dependencies = [
+    "asyncpg>=0.30.0",
+    "devtools>=0.12.2",
+    "httpx>=0.28.1",
+    "logfire[asyncpg,httpx]>=3.19.0",
+    "pydantic-ai[logfire]>=0.2.18",
+    "python-dotenv>=1.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+    "ruff>=0.11.13",
+    "taskipy>=1.14.1",
+]
